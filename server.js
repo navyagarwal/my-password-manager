@@ -27,5 +27,13 @@ app.get('/', (req, res) =>{
     res.render('index');
 })
 
+app.get('/add-entry', (req, res) =>{
+    res.render('add_entry');
+})
+
+app.get('/update-entry', (req, res) =>{
+    res.render('update_entry');
+})
+
 app.listen(PORT, () => {console.log(`Server is running http://localhost:${PORT}`)});
 
