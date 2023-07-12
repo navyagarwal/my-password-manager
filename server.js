@@ -23,17 +23,7 @@ app.use('/css', express.static(path.resolve(__dirname, "assets/css")))
 app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 app.use('/img', express.static(path.resolve(__dirname, "assets/img")))
 
-app.get('/', (req, res) =>{
-    res.render('index');
-})
-
-app.get('/add-entry', (req, res) =>{
-    res.render('add_entry');
-})
-
-app.get('/update-entry', (req, res) =>{
-    res.render('update_entry');
-})
+// load routers
+app.use('/', require('./server/routes/router'))
 
 app.listen(PORT, () => {console.log(`Server is running http://localhost:${PORT}`)});
-
