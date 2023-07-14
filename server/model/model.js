@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-var scheme = new mongoose.Schema({
+var schema = new mongoose.Schema({
     purpose:{
         type:String,
         required:true,
@@ -22,6 +22,6 @@ var scheme = new mongoose.Schema({
     status:String
 })
 
-const PwdDB = mongoose.model('pwddb', schema)
+const PwdDB = mongoose.model('pwddb', schema);
 
-module.exports = PwdDB
+module.exports = PwdDB;
