@@ -8,6 +8,8 @@ exports.create = (req, res) => {
         return;
     }
 
+    console.log(req.body);
+
     // new entry
     const entry = new PwdDB({
         purpose:req.body.purpose,
@@ -15,13 +17,14 @@ exports.create = (req, res) => {
         username:req.body.username,
         password:req.body.password,
         status:req.body.status
-    })
+    });
 
     // save entry in the database
     entry
         .save(entry)
         .then(data => {
-            res.send(data)
+            // res.send(data)
+            res.redirect("/add-entry")
         })
         .catch(err => {
             res.status(500).send({

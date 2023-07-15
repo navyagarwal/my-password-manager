@@ -4,7 +4,6 @@ var schema = new mongoose.Schema({
     purpose:{
         type:String,
         required:true,
-        unique:true
     },
     email:{
         type:String,
