@@ -17,10 +17,29 @@ $("#update_entry").submit(function(event){
     var request = {
         "url": `http://localhost:3000/api/passwords/${data.id}`,
         "method": "PUT",
-        "data": JSON.stringify(data)
+        "data": data
     }
 
     $.ajax(request).done(function(response){
         alert("Data updated successfully!");
     })
 })
+
+if(window.location.pathname == "/"){
+    $ondelete = $(".table tbody td a.delete");
+    $ondelete.click(function(){
+        var id = $(this).attr("data-id")
+
+        var request = {
+            "url": `http://localhost:3000/api/passwords/${id}`,
+            "method": "DELETE",
+        }
+
+        if(confirm("Do you really want to delete this record?")){
+            $.ajax(request).done(function(response){
+                alert("Data deleted successfully!");
+                location.reload()
+            })
+        }
+    })
+}

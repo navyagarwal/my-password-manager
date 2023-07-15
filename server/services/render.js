@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 exports.homeRoutes = (req, res) => {
-    // Make a GET request to api.users
+    // Make a GET request to api/passwords
     axios.get('http://localhost:3000/api/passwords')
         .then(function(response){
             res.render('index', {entries: response.data});

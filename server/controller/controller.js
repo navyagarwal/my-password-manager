@@ -92,7 +92,7 @@ exports.delete = (req, res) => {
                 res.status(404).send({message: `Cannot Delete Entry with ${id}. Maybe id is wrong!`})
             }else{
                 res.send({
-                    message: "User was deleted successfully!"
+                    message: "Entry was deleted successfully!"
                 })
             }
         })
