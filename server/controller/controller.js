@@ -32,13 +32,29 @@ exports.create = (req, res) => {
 
 // retrieve and return all passwords/ retrieve and return a single password
 exports.find = (req, res) => {
-    PwdDB.find()
-    .then(entry => {
-        res.send(entry)
-    })
-    .catch(err => {
-        res.status(500).send({message: err.message || "Error occurred while retrieving password information"})
-    });
+
+    if(req.query.id){
+        const id = req.query.id;
+        PwdDB.findById(id)
+            .then(data => {
+                if(!data){
+                    res.status(404).send({message: `Not found entry with ${id}`})
+                }else{
+                    res.send(data)
+                }
+            })
+            .catch(err => {
+                res.status(500).send({message: `Error retrieving entry with id ${id}`})
+            })
+    }else{
+        PwdDB.find()
+        .then(entry => {
+            res.send(entry)
+        })
+        .catch(err => {
+            res.status(500).send({message: err.message || "Error occurred while retrieving password information"})
+        });
+    }
 }
 
 // update a new identified password by passwordid
