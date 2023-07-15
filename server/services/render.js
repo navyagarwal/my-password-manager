@@ -16,5 +16,11 @@ exports.add_entry = (req, res) => {
 }
 
 exports.update_entry = (req, res) => {
-    res.render('update_entry');
+    axios.get('http://localhost:3000/api/passwords', {params: {id: req.query.id}})
+        .then(function(entrydata) {
+            res.render("update_entry", {entry: entrydata.data})
+        })
+        .catch(err =>{
+            res.send(err);
+        })
 }
