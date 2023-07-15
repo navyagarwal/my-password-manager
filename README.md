@@ -3,9 +3,9 @@
 This is a basic password manager application built using Node.js, Express, and MongoDB. The application follows a CRUD (Create, Read, Update, Delete) functionality to handle password records.
 
 ### Technologies Used
-Node.js: A JavaScript runtime environment used for server-side development.
-MongoDB: A NoSQL database used for storing user and password records.
-GitHub Codespaces: An integrated development environment (IDE) provided by GitHub for seamless coding and collaboration.
+- Node.js: A JavaScript runtime environment used for server-side development.
+- MongoDB: A NoSQL database used for storing user and password records.
+- GitHub Codespaces: An integrated development environment (IDE) provided by GitHub for seamless coding and collaboration.
 
 ### Dependencies
 The application relies on the following dependencies:
